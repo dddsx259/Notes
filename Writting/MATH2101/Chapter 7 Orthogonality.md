@@ -144,7 +144,7 @@ $$S^\perp = \{v\in \mathbb{R}^n:\forall u\in S,\ v\cdot u=0\}$$
  Then every vector $u$ in $\mathbb{R}^n$ can be written in the form $u = w+z$ where $w ∈ W$ and $z∈W^⊥$ in a unique way.  
 #### prop:
  1. $dim\ W+dim\ W^\perp =n$
- 2. $\Beta\cup \Beta'$is a  basis for $\mathbb{R}^n$, where $\Beta$ is a basis for $W$ and $\Beta'$ is a basis for $W^\perp$.
+ 2. $\Beta \cup \Beta'$is a  basis for $\mathbb{R}^n$, where $\Beta $ is a basis for $W$ and $\Beta '$ is a basis for $W^\perp$.
  ### Orthogonal Projection
  Let $W$ be a subspace of $\mathbb{R}^n$. The ***orthogonal projection*** function
  $U_W$ :$\mathbb{R}^n →\mathbb{R}^n$ is a linear transformation. The standard matrix $P_W$ of $U_W$ is given by:  
