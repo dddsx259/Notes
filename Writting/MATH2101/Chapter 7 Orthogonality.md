@@ -144,7 +144,7 @@ $$S^\perp = \{v\in \mathbb{R}^n:\forall u\in S,\ v\cdot u=0\}$$
  Then every vector $u$ in $\mathbb{R}^n$ can be written in the form $u = w+z$ where $w ∈ W$ and $z∈W^⊥$ in a unique way.  
 #### prop:
  1. $dim\ W+dim\ W^\perp =n$
- 2. $\Beta \cup \Beta'$is a  basis for $\mathbb{R}^n$, where $\Beta $ is a basis for $W$ and $\Beta '$ is a basis for $W^\perp$.
+ 2. $B \cup B'$is a  basis for $\mathbb{R}^n$, where $B$ is a basis for $W$ and $B'$ is a basis for $W^\perp$.
  ### Orthogonal Projection
  Let $W$ be a subspace of $\mathbb{R}^n$. The ***orthogonal projection*** function
  $U_W$ :$\mathbb{R}^n →\mathbb{R}^n$ is a linear transformation. The standard matrix $P_W$ of $U_W$ is given by:  
@@ -166,14 +166,14 @@ $$\begin{align*}
             y_n-(a_0+a_1x_n)\\
         \end{bmatrix}
     \end{Vmatrix}^2\\
-    &= ||\bm{y}-(a_0\bm{1}+a_1\bm{x})||^2
+    &= ||\mathbf{y}-(a_0\mathbf{1}+a_1\mathbf{x})||^2
 \end{align*}$$
-Hence we want to look for the vector in $Span\{1,x\}$ that is closest to $\bm{y}$, 
+Hence we want to look for the vector in $Span\{1,x\}$ that is closest to $\mathbf{y}$, 
  naturally, we consider the orthofonal projection. 
 
- >根据线性代数理论, $y$ 在子空间$Span\{1,x\}$上的正交投影是最小化误差$||\bm{y}-\bm{p}||$的唯一解  
+ >根据线性代数理论, $y$ 在子空间$Span\{1,x\}$上的正交投影是最小化误差$||\mathbf{y}-\mathbf{p}||$的唯一解  
 
-More generally, finding the 'Least Squares Fitting' is equivalent to finding the 'best approximation' of $A\bm{x}=\bm{b}$, where:
+More generally, finding the 'Least Squares Fitting' is equivalent to finding the 'best approximation' of $A\mathbf{x}=\mathbf{b}$, where:
 $$A=
 \begin{bmatrix}
     1 & x_1\\
@@ -183,7 +183,7 @@ $$A=
     . & .\\
     1 & x_n\\
 \end{bmatrix},
-\ \bm{b}=
+\ \mathbf{b}=
 \begin{bmatrix}
     y_1\\
     y_2\\
@@ -192,20 +192,20 @@ $$A=
     .\\
     y_n\\
 \end{bmatrix},
-\ \bm{x}=
+\ \mathbf{x}=
 \begin{bmatrix}
     a_0\\
     a_1\\
 \end{bmatrix}
 $$
 
- It's equivalent to the 'best approximate solution' $\bm{z}$ so that $A\bm{z} = \bm{b}^′$ is as close to $\bm{b}$ as possible. This amounts to solving the equation $A\bm{z} = \bm{b}^′$ where \bm{b}^′$ is the orthogonal projection of $\bm{b}$ on $Col\ A$. There are two cases:
-1. There are infinitely solutions of $A\bm{x}=\bm{b}$
+ It's equivalent to the 'best approximate solution' $\mathbf{z}$ so that $A\mathbf{z} = \mathbf{b}^′$ is as close to $\mathbf{b}$ as possible. This amounts to solving the equation $A\mathbf{z} = \mathbf{b}^′$ where \mathbf{b}^′$ is the orthogonal projection of $\mathbf{b}$ on $Col\ A$. There are two cases:
+1. There are infinitely solutions of $A\mathbf{x}=\mathbf{b}$
    The form of the solution can be
-   $$\bm{x}=\bm{x_0}+\bm{z}$$
+   $$\mathbf{x}=\mathbf{x_0}+\mathbf{z}$$
    where $x_0$ is a **particular solution** of the linear equation   
-   $z$ is the **general solution** of the linear equation($Az=\bm{0}$, i.e. $z\in Null(A)$)  
-   We want to find the least norm solution, which means the $\bm{z}$ is clost to $\bm{0}$ 
-2. There are no solution of $A\bm{x}=\bm{b}$   
-   So there also be infinitely many best approximate solutions to $A\bm{x} = \bm{b}^′$
+   $z$ is the **general solution** of the linear equation($Az=\mathbf{0}$, i.e. $z\in Null(A)$)  
+   We want to find the least norm solution, which means the $\mathbf{z}$ is clost to $\mathbf{0}$ 
+2. There are no solution of $A\mathbf{x}=\mathbf{b}$   
+   So there also be infinitely many best approximate solutions to $A\mathbf{x} = \mathbf{b}^′$
 
