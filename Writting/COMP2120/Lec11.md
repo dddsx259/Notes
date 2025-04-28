@@ -17,7 +17,7 @@
   1. [label] (Oprional): 
      1. A label is an optional field used to identify a specific memory location or instruction.
      2. Labels are often used as references for jumps, loops, or data locations.
-     3. Labels typically end with a colon (:).
+     3. Labels typically end with a colon (\:).
   2. Memoric:
      1. The mnemonic is the core part of the instruction, representing the operation to be performed by the CPU.
      2. Mnemonics are short, human-readable codes that correspond to machine instructions.
