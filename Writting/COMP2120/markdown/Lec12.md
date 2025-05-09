@@ -41,6 +41,15 @@ We can change from Kernel mode but can't change inverse. So we can use **System 
 
 ## Multi tasking and Time-sharing System
 CPU idle when I/O is performed, se we can share CPU when one process don't use CPU. We use **Time-sharing System** to do that:  
->Each process is allocated a time slice of 0.1 sec, say. When process uses up its time slice, it will stop execution, and let the next process to be executed.  
+>Each process is allocated a time slice of 0.1 sec, say. When process uses up its time slice, it will stop execution, and let the next process to be executed. 
 When a process cannot proceed (e.g. perform I/O), it will also stop execution   
+
+## Vitrual Memory
+### Definition:  
+#### Physical Address: 
+Addresses that are used to actually access the memory
+#### Logical address:
+Addressing space of program
+After use **virtual memory**, programmer needn't manage the actually memory.
+>Life is easier for the programmer
 
