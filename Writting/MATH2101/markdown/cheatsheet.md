@@ -67,33 +67,33 @@ Specifically:
 LU decomposition of $A$ is a factorization of the form $A=LU$ in which $L$ is a unit lower triangular (square) matrix (i.e. all entries on the diagonal are 0) and $U$ is upper triangular (not necessarily square).    
 
 $$A = 
-\begin{pmatrix}
+\begin{bmatrix}
     2 & 1 \\
     4 & 3
-\end{pmatrix}=
-\begin{pmatrix}
+\end{bmatrix}=
+\begin{bmatrix}
     1 & 0 \\
     2 & 1
-\end{pmatrix}
-\begin{pmatrix}
+\end{bmatrix}
+\begin{bmatrix}
     2 & 1 \\
     0 & 1
-\end{pmatrix}
+\end{bmatrix}
 = LU
 $$
 
 $$其中：
 L = 
-\begin{pmatrix}
+\begin{bmatrix}
 1 & 0 \\
 2 & 1
-\end{pmatrix},
+\end{bmatrix},
 \quad
 U = 
-\begin{pmatrix}
+\begin{bmatrix}
 2 & 1 \\
 0 & 1
-\end{pmatrix}
+\end{bmatrix}
 $$
 
 ### 14. PLU Decomposition
@@ -134,9 +134,149 @@ Let $T : \mathbb{R}^n →\mathbb{R}^m$ be a **linear transformation** with stand
 (a) $T$ is **injective** if and only if $rankA = n$ (equivalently, T has null space{0} ).
 (b) $T$ is **surjective** if and only if $rankA = m$.
 
-### 18.Null space of T (aka null space of A,  kernel of T)
+### 18. Null space of T (aka null space of A,  kernel of T)
 The **preimage**(原像) of $\{0\}$
 &emsp;i.e. the set of all $v$ such that $T(v)=0$ is called the **null space** of $T$.
+
+### 19. cofactor
+Let A = $[a_{ij}]$ be an $n\times n$ matrix.
+&emsp;$A_{ij}$ is a submatrix of A that obtained by deleting the  $i-th$ row and $j-th$ column.
+&emsp;$C_{ij}$ is (i, j)-cofactor, defined by 
+$$
+C_{ij}=(-1)^{i+j}\times det(A_{ij})
+$$
+
+### 20. Determination
+For an $n\times n$ matrix $A=[a_{ij}]$,  we define:
+$$
+detA=\sum^n_{i=1}a_{ij}\cdot C_{ij}\ or\ \sum^n_{j=1}a_{ij}\cdot C_{ij}\\
+where\ i, j \in \mathbb{R}
+$$
+Knowns as “The **cofactor expansion** along the **j-th column** or **i-th row**”
+
+### 21. adjoint
+The adjoint of $A$, denoted by $adj(A)$.
+$adj(A)=[C_{ij}]$
+
+### 22. Subspace
+A subset $W\subseteq \mathbb{R}^n$ is said to be a ***subspace*** of $\mathbb{R}^n$ if it satisfies the following:
+- $\vec{0}\in W$
+- If $\vec{x},\vec{y}\in W$, then $\vec{x}+\vec{y}\in W$(i.e. W is closed under addition)
+- If $\vec{x}\in W$and $c\in \mathbb{R}$, then $c\vec{x}\in W$(i.e. W is closed under scalar multiplication)
+
+## For each $m\times n$ matrix $A$, we have:
+
+### 23. Row space
+
+Notion: $Row\ A$
+
+Subspace of $\mathbb{R}^n$
+
+**Span** of the rows of $A$
+
+### 24. Column space
+
+Notion: $Col\ A$
+
+Subspace of $\mathbb{R}^m$
+
+**Span** of the columns of $A$
+
+### 25. Null space
+
+Notion: $Null\ A$
+
+Subspace of $\mathbb{R}^n$
+
+**Solution set** of $A\vec{x}=0$
+
+### 26. Basis:
+
+Let $V$ be a subspace of $\mathbb{R}^n$. A linearly independent generating set for $V$ is called a basis for $V$.
+Remarks:
+- The plural for basis is ***bases***. (单词basis的复数形式是bases)
+- A basis for V must be a subset of V.
+- Every basis for $\mathbb{R}^n$ consists of exactly $n$ vectors.
+
+### 27. **Reduction Theorem (约简定理) and Extension Theorem (扩展定理):**
+Let $V$ be a non-zero subspace of $\mathbb{R}^n$. We have the following:
+- (Reduction theorem) Every finite generating set of $V$ contains a basis.
+- (Extension theorem) Every linearly independent subset of $V$ can be extended to a basis.  
+(By convention we say that only basis of the zero subspace is the empty set.)
+
+### 28. Dimension
+Any two bases for $V$ contain the **same number** of vectors. This number is said to be the **dimension of $V$** and is denoted by $dim(V)$.
+(By convention the **zero subspace** is defined to have **dimension 0**.)
+
+### 28. Coordinate vector:
+#### lemma:
+Let $B =\{b_1,b_2...b_k\}$ be an ***ordered basis*** for a subspace V.
+Then each $v\in V$ can be written as a unique linear combination of the vectors in $B$.
+In the forms as:
+$$
+ v =c_1b_1 +c_2b_2 +...+c_kb_k
+$$
+#### Hence we define :
+$$
+[v]_B=\begin{bmatrix}c_1\\c_2\\c_3\\…\\c_k\end{bmatrix}=B^{-1}v
+$$
+to be the ***coordinate vector of v relative to B*** (or ***B-coordinate vector of v***).
+
+## 29. Similarity of matrices
+Let $A$ and $B$ be square matrices. We say $A$ is **similar** to $B$ if
+$$
+B=P^{−1}AP
+$$
+for some invertible matrix $P$.
+Thus in some sense, **similar matrices** can be seen as **matrices representing the same linear transformation with respect to different bases**.
+
+### 30. eigencalue, eigenvactor and eigenspace
+Let $A$ be a square matrix. If $Ax=\lambda x$ for some non-zero vector $x$ and scalar $t$
+$\lambda $ is called to be an **eigenvalue** of $A$ ;
+$x$ is called an **eigenvector** of $A$ corresponding to the eigenvalue ,or in short, a of $A$.
+and we call $Null(A-tI)$ as *eigenspace* of $A$ corresponding of t, or in shorter, the t-eigenspace of $A$
+
+### 31. character equation and character polynomial
+In the progess of finding the eigenvalue, we define **character equation** is:
+$$
+det(A-\lambda I)=0
+$$
+and character polynomial is LHS:
+$$det(A-\lambda I)$$
+
+### 32. Algebraic multiplicity and geometric multiplicity
+#### lemma:
+&emsp;A degree $n$ polynomial (where $n>1$) with coefficients in $\mathbb{C}$ has exactly $n$ zeros(零点) in $\mathbb{C}$ (counting multiplicities，重根). 
+&emsp;It thus follows that a $n×n$ matrix $A$ has exactly $n$ eigenvalues in  $\mathbb{C}$ (counting multiplicities)
+- The ***algebraic multiplicity*** (or simply ***multiplicity***) of an eigenvalue is the number of times it appears as a zero of the character polynomial.
+- The ***geometric multiplicity*** of an eigenvalue is the dimension of its corresponding eigenspace.
+
+### 33. Diagonalization(对角化)
+#### diagonalizable:
+An $n\times n$ matrix $A$ is **diagonalizable** IFF it has $n$ **linear independent** eigenvectors.
+  - Eigenvectors of a matrix $A$ that correspond to distinct eigenvalues are linearly independent.
+- If a matrix $A$ has an eigenvalue whose geometric multiplicity is less than the algebraic multiplicity, then $A$ is not diagnosable.    
+
+Thus, A matrix $A$ is diagonalizable if and only if for each of its eigenvalues, the algebraic and geometric  multiplicities are equal.
+#### Process
+If $A$ is a diagonalizable $n\times n$ matrix, it has $n$ **eigenvalues**:$\{\lambda_1, \lambda_2, ... \lambda_n\}$ and $n$ **corresponding linear independent eigenvectors**:$\{v_1, v_2, ... v_n\}$
+$$
+(i.e. \forall i\in\mathbb{R}\ Av_i=\lambda_i v_i)
+$$
+Then we have:
+$$A=PDP^-1$$
+where $P$ is **eigenvector matrix** and $D$ is **diagonal matrix of eigenvalues**
+$$P=
+\begin{bmatrix}
+v_1 & v_2 & \cdots & v_n
+\end{bmatrix},\ 
+D=\begin{bmatrix}
+\lambda_1 & 0 & \cdots & 0\\
+0 & \lambda_2 & \cdots & 0\\
+\cdots & \cdots & \cdots & \cdots\\
+0 & 0 & \cdots & \lambda_n\\
+\end{bmatrix}
+$$
 
 ---
 ## PART2: property  
@@ -164,7 +304,7 @@ The **preimage**(原像) of $\{0\}$
 (f) The system $Ax = 0$ only has the **trivial solution**.
 
 ### 4. Equivalent conditions about invertibility:
-The following statements are equivalent for an n×n matrix A:
+The following statements are equivalent for an n×n matrix
 (1) $A$ is invertible
 (2) The RREF of $A$ is $I$.
 (3) The span of the columns of $A$ is $\mathbb{R}^n$ 
@@ -179,58 +319,121 @@ The following statements are equivalent for an n×n matrix A:
 ​
 ### 5. Common geometric transformation
 #### (1) Reflection on x/y - axis
-$$\begin{pmatrix}
+$$\begin{bmatrix}
     x\\
     y
-\end{pmatrix}
-\Rightarrow
-\begin{pmatrix}
+\end{bmatrix} \Rightarrow
+\begin{bmatrix}
     x\\
     -y
-\end{pmatrix}
+\end{bmatrix}
 \ or\ 
-\begin{pmatrix}
+\begin{bmatrix}
     -x\\
     y
-\end{pmatrix}
+\end{bmatrix}
 $$
 
 just multiply following matrix:
 $$
-\begin{pmatrix}
+\begin{bmatrix}
     1 & 0\\
     0 & -1
-\end{pmatrix}
+\end{bmatrix}
 \ or\ 
-\begin{pmatrix}
+\begin{bmatrix}
     -1 & 0\\
     0 & 1
-\end{pmatrix}
+\end{bmatrix}
 $$
 #### (2)Translation upward by 1 unit
 Not exist a linear transformation fot it
 
 #### (3)Enlargement about the origin by a factor of $k$
 $$
-\begin{pmatrix}
+\begin{bmatrix}
     x\\
     y
-\end{pmatrix}\Rightarrow
-\begin{pmatrix}
+\end{bmatrix}\Rightarrow
+\begin{bmatrix}
     kx\\
     ky
-\end{pmatrix},\ k\in \mathbb{R}
+\end{bmatrix},\ k\in \mathbb{R}
 $$
 just multiply following matrix:
 $$
-\begin{pmatrix}
+\begin{bmatrix}
     k & 0\\
     0 & k
-\end{pmatrix}
+\end{bmatrix}
 $$
 ......
 
 6. A transformation $T : \mathbb{R}^n → \mathbb{R}^m$ is **linear** if and only if it is a **matrix transformation**.
+
+### 7. Simplification of evaluating the determinant
+- Find the tow/column that with more zero.
+- The determinant of the triangular matrix, is equal to the product of the non-zero matrix.
+    - $det\left(\begin{matrix}A_{11} & * & {…} & *\\0 & A_{22} & {…} & * \\ {…} & {…} & {… } & {…}\\ 0 & 0 & 0 & A_{nn} \end{matrix}\right)=\prod^n_{i=1}A_{ii}$
+    - Generalized, if each $A_{ii}$ is a block matrix, then we have:
+        - $det\left(\begin{matrix}A_{11} & * & {…} & *\\0 & A_{22} & {…} & * \\ {…} & {…} & {… } & {…}\\ 0 & 0 & 0 & A_{nn} \end{matrix}\right)=\prod^n_{i=1}det(A_{ii})$
+- ERO’s effect on determinant:
+    - Type 1 EROs—Exchange two rows
+        - $det(E_1A)=(-1)\times det(A)$
+    - Type 2 EROs—Multiply one row by a constant k:
+        - $det(E_2A)=k\times det(A)$
+    - Type 3 EROs—Add a row to another row:
+        - $det(E_3A)=det(A)$
+    - Essentially, that is because:
+        - $det(EA)=det(E)\times det(A)$
+
+### 8. Properties of determinants
+Let A be a square matrix. Then
+- A is invertible if and only if $det(A)\ne 0$
+- $det(AB)=det(A)\times det(B)$(if they have the same size)
+- $det(A^T)=det(A)$
+- $det(A^{-1})=\frac{1}{det(A)}$
+- Let $T$ : $R^n\rightarrow R^n$ be an invertible linear transformation with standard matrix $A$. Then for any “**sufficiently nice region**” $S\in R^n$ (Usually refers to the region that can calculate the volumn), **the n-dimensional volume of T(S) is equal to $|det(A)|$ times the n-dimensional volume of S**.
+
+### 9. Use determinant to solve the inverse matrix.
+we have:
+$A^{-1}=\frac{1}{det(A)}\times adj(A)$
+
+### 10. Cramer’s rule:
+We have $Ax=b$
+so $\vec{x}=A^{-1}\vec{b}=\frac{1}{det(A)}\times det(adj(A))\times \vec{b}$
+Let $A_i$ denote the $i-th$ column of A
+then we have:
+$$
+x_i=\frac{det([\vec{A_1}\ {...}\    \vec{A_{i-1}}\ \vec{b}\ \vec{A_{i+1}}\ {...}\ \vec{A_n}])}{det(A)}
+$$
+
+### 11. How to find a basis for each of the row space, column space and the null space of a matrix $A$:
+If $R$ is the RREF of $A$
+1. The set of non-zero rows of $R$ will form a basis for $Row\ A$.
+&emsp;i.e. $dim(Row\ A)$ is equal to the numbers of non-zero rows of $R$ 
+2. The set of leading columns will form a basis for $Col\ A$.
+3. The set of **special solution vectors corresponding to the free variables in R** will form a basis for $Null\ A$.
+
+### 12. If $V$ and $W$ are subspaces of $\mathbb{R}^n$ such that $V\subseteq W$, then $dim(V)\le dim(W)$. Equality holds if and only if $V=W$.
+
+### 13. For a linear transformation $T_A$, we have:
+$$
+[T(v)]_B=[T]_B[v]_B
+$$
+$$
+[T]_B=\left[[T(b_1)]_B\ [T(b_2)]_B\ ...\ [T(b_k)]_B\right]
+$$
+
+### 14. Finding eigenvalues
+Let $A$ be an $n\times n$ matrix.
+The equation $det(A-tI) = 0$ is called the ***characteristic equation*** of $A$.
+The LHS of the characteristic equation, is said to be the ***characteristic polynomial*** of $A$. 
+Eigenvalues of $A$ are thus roots of its characteristic equation, or zeros of its characteristic polynomial.
+It can be proved by induction on $n$ that the characteristic polynomial of $A$ is indeed a polynomial (with degree n).
+&emsp;P.S. Some authors prefer to use $det(tI-A)$ instead of $det(A-tI)$.
+
+### 15. The algebraic multiplicity of an eigenvalue is always greater than or equal to its geometric multiplicity.
 
 ---
 ## PART3: glossary
@@ -256,4 +459,18 @@ $$
 9. Null space: 零空间
 10. Kernel: 核
 11. preimage: 原像
-12. 
+12. cofactor: 余子式
+13. Determination: 特征值
+14. cofactor expansion: 代数余子式展开
+15. block matrix:分块矩阵
+16. adjoint: 伴随矩阵
+17. Subspace: 子空间
+18. Row space: 行空间
+19. Column space: 列空间
+20. Basis: 基, 复数为bases
+21. Reduction Theorem: 约简定理
+22. Extension Theorem: 扩展定理
+23. Dimension:  维度
+24. zero subspace: 零子空间
+25. Coordinate vector: 坐标向量
+26. 

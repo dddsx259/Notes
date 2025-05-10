@@ -42,7 +42,7 @@ Then $||u||=1$ and is called a **unit vector**. This process is known as **norma
 
 ### Orthogonal projection:
 
- In general, the orthogonal projection of $u$ on a non-zero vector $v$ is given by:
+ In general, the **orthogonal projection** of $u$ on a non-zero vector $v$ is given by:
 
 $$
 w=\frac{u\cdot v}{||v||^2}v
@@ -60,7 +60,7 @@ $$
 ||u||^2+||v||^2=||u+v||^2
 $$
 
-Generally:
+#### Generally:
 
 For $m$ vectors $v_1,\ v_2 …\ v_m$ in $\mathbb{R}^n$, they are pairwise orthogonal IFF:
 
@@ -131,7 +131,7 @@ $$
 ### Orthogonal Complement of S:
 #### Definition:
 Let $S$ be a subset of $\mathbb{R}^n$.  
-The ***Orthogonal complement***of $S$,  denoted by $S^\perp$ is the set of vectors in $\mathbb{R}^n$ that are orthogonal to every vector in $S$.  
+The ***Orthogonal complement*** of $S$,  denoted by $S^\perp$ is the set of vectors in $\mathbb{R}^n$ that are orthogonal to every vector in $S$.  
 i.e.  
 $$S^\perp = \{v\in \mathbb{R}^n:\forall u\in S,\ v\cdot u=0\}$$
 #### prop:
