@@ -230,11 +230,11 @@ $$
 for some invertible matrix $P$.
 Thus in some sense, **similar matrices** can be seen as **matrices representing the same linear transformation with respect to different bases**.
 
-### 30. eigencalue, eigenvactor and eigenspace
+### 30. eigenvalue, eigenvactor and eigenspace
 Let $A$ be a square matrix. If $Ax=\lambda x$ for some non-zero vector $x$ and scalar $t$
 $\lambda $ is called to be an **eigenvalue** of $A$ ;
 $x$ is called an **eigenvector** of $A$ corresponding to the eigenvalue ,or in short, a of $A$.
-and we call $Null(A-tI)$ as *eigenspace* of $A$ corresponding of t, or in shorter, the t-eigenspace of $A$
+and we call $Null(A-\lambda I)$ as *eigenspace* of $A$ corresponding of $\lambda$, or in shorter, the $\lambda-eigenspace$ of $A$
 
 ### 31. character equation and character polynomial
 In the progess of finding the eigenvalue, we define **character equation** is:
@@ -277,6 +277,162 @@ D=\begin{bmatrix}
 0 & 0 & \cdots & \lambda_n\\
 \end{bmatrix}
 $$
+
+### 34. Norm (or length) of vector:
+$$
+||v||=\sqrt{v^2_1+v^2_2+...+v^2_n}
+$$
+
+### 35. Distance between $u$ and $v$:
+$$
+d(u,\ v)=||u-v||
+$$
+
+### 36. Orthogonal (or perpendicular):
+We say that $u$ and $v$ are orthogonal (or perpendicular) if $u · v = 0$
+(i.e.  $u · v = u_1v_1 +u_2v_2 +···+u_nv_n$=0)
+
+### 37. Unit vector and normalizing:
+For any non-zero vector v, consider 
+$$
+u=\frac{1}{||v||}v
+$$
+Then $||u||=1$ and is called a **unit vector**. This process is known as **normalising** the vector $v$, producing a unit vector in the same direction as $v$.
+
+### 38. Orthogonal projection and orthogonal projection:
+In general, the **orthogonal projection** of $u$ on a non-zero vector $v$ is given by:
+$$
+w=\frac{u\cdot v}{||v||^2}v
+$$
+![alt text](image-2.png)
+Let $W$ be a subspace of $\mathbb{R}^n$. The ***orthogonal projection*** function
+$U_W$ :$\mathbb{R}^n →\mathbb{R}^n$ is a linear transformation. The standard matrix $P_W$ of $U_W$ is given by:  
+$P_W=C(C^TC)^{-1}C^T$, where $C$ is a matrix whose columns form a basis for $W$.  
+And we have:  
+Let $C$ be a matrix whose columns are linearly independent. Then $C^TC$ is invertible.
+
+### 39. Pythagoras’ Theorem
+For two vectors:
+Two vectors $u$ and $v$ in $\mathbb{R}^n$ are **orthogonal IFF:**
+$$
+||u||^2+||v||^2=||u+v||^2
+$$
+#### Generally:
+For $m$ vectors $v_1,\ v_2 …\ v_m$ in $\mathbb{R}^n$, they are pairwise orthogonal IFF:
+$$
+||v_1||^2+||v_2||^2+…+||v_m||^2=||v_1+v_2+…+v_m||^2
+$$
+
+### 40. Cauchy-Schwarz inequality
+For real numbers $u_1,u_2,...,u_n$ and $v_1, v_2,...,v_n$, we have:
+$$
+(u_1v_1+u_2v_2+...+u_nv_n)^2 \le (u^2_1+u^2_2+...+u^2_n)^2  (v^2_1+v^2_2+...+v^2_n)^2
+$$
+Equality holds IFF $\forall i\neq j, u_iv_j=u_jv_i$
+For vector, we have:
+For any $u,v\in \mathbb{R}^n$, we have $|u\cdot v|\le ||u||\cdot||v||$
+Equality holds IFF $u\parallel v$
+
+### 41. Triangle inequality
+For any $v_1,v_2,...,v_k ∈\mathbb{R}^n$, we have:
+$$
+||v_1||+||v_2||+...+||v_k||\ge||v_1+v_2+...+v_k||
+$$
+
+### 42. Orthogonal set
+#### Definition:
+Let $S$ be a subset of $\mathbb{R}^n$.
+(a) $S$ is said to be an **orthogonal set** if any two vectors in $S$ are orthogonal.
+(b) Furthermore, if every vector in $S$ has unit length (i.e. norm 1), then $S$ is said to be an **orthonormal set**.
+Clearly, we can get an orthonormal set by normalizing each vector of an orthogonal set.
+
+### 43. Orthogonal basis
+In general, suppose $B = {v_1,v_2,...,v_k}$ is an orthogonal basis for a subspace $V$ of $\mathbb{R}^n$. Then for any $v ∈ V$, we have:
+$$
+v=\sum \frac{v\cdot v_i}{||v_i||^2}v_i
+$$
+Furthermore, if the basis $B$ is orthonormal, the above expression can be simplified to:
+$$
+v=\sum (v\cdot v_i)v_i
+$$
+Prop: Every orthogonal set of non-zero vectors is linearly independent.  
+
+### 44. *Gram Schmidt* process
+Suppose $\{u_1, u_2, ... u_k\}$ is a basis for a subspace $W$ of $\mathbb{R}^n$. The ***Gram Schmidt*** process turns this basis into an orthogonal basis $\{v_1, v_2, ... v_n\}$ by:   
+$$
+\begin{align*}
+& v_1=u_1 \\ 
+& v_i=u_i-\sum_{k=0}^{i-1}\frac{u_i\cdot v_k}{||v_k||}v_k\ for\ 2\le i\le k
+\end{align*}
+$$  
+
+### 45. Orthogonal Complement of S:
+#### Definition:
+Let $S$ be a subset of $\mathbb{R}^n$.  
+The ***Orthogonal complement*** of $S$,  denoted by $S^\perp$ is the set of vectors in $\mathbb{R}^n$ that are orthogonal to every vector in $S$.  
+i.e.  
+$$S^\perp = \{v\in \mathbb{R}^n:\forall u\in S,\ v\cdot u=0\}$$
+
+### 46. Orthogonal Decomposition Theorem
+#### Definition
+Let $W$ be a subspace of $\mathbb{R}^n$.  
+Then every vector $u$ in $\mathbb{R}^n$ can be written in the form $u = w+z$ where $w ∈ W$ and $z∈W^⊥$ in a unique way.
+
+### 47. Least Squares Fitting(not in final, just for reading):
+There are $n$ points $(x_1,y_1),(x_2,y_2),...,(x_n,y_n)$ on the plane.We use square deviation $E$ to describe the fitting level of the straight line $y=a_0+a_1x$:  
+$$\begin{align*}
+    E&=\sum^n_{i=1}[y_i-(a_0+a_1x_i)]^2\\
+    &=
+    \begin{Vmatrix}
+        \begin{bmatrix}
+            y_1-(a_0+a_1x_1)\\
+            y_2-(a_0+a_1x_2)\\
+            \vdots\\
+            y_n-(a_0+a_1x_n)\\
+        \end{bmatrix}
+    \end{Vmatrix}^2\\
+    &= ||\mathbf{y}-(a_0\mathbf{1}+a_1\mathbf{x})||^2
+\end{align*}$$
+Hence we want to look for the vector in $Span\{1,x\}$ that is closest to $\mathbf{y}$, 
+ naturally, we consider the orthofonal projection. 
+
+ >根据线性代数理论, $y$ 在子空间$Span\{1,x\}$上的正交投影是最小化误差$||\mathbf{y}-\mathbf{p}||$的唯一解  
+
+More generally, finding the 'Least Squares Fitting' is equivalent to finding the 'best approximation' of $A\mathbf{x}=\mathbf{b}$, where:
+$$A=
+\begin{bmatrix}
+    1 & x_1\\
+    1 & x_2\\
+    . & .\\
+    . & .\\
+    . & .\\
+    1 & x_n\\
+\end{bmatrix},
+\ \mathbf{b}=
+\begin{bmatrix}
+    y_1\\
+    y_2\\
+    .\\
+    .\\
+    .\\
+    y_n\\
+\end{bmatrix},
+\ \mathbf{x}=
+\begin{bmatrix}
+    a_0\\
+    a_1\\
+\end{bmatrix}
+$$
+
+ It's equivalent to the 'best approximate solution' $\mathbf{z}$ so that $A\mathbf{z} = \mathbf{b}^′$ is as close to $\mathbf{b}$ as possible. This amounts to solving the equation $A\mathbf{z} = \mathbf{b}^′$ where \mathbf{b}^′$ is the orthogonal projection of $\mathbf{b}$ on $Col\ A$. There are two cases:
+1. There are infinitely solutions of $A\mathbf{x}=\mathbf{b}$
+   The form of the solution can be
+   $$\mathbf{x}=\mathbf{x_0}+\mathbf{z}$$
+   where $x_0$ is a **particular solution** of the linear equation   
+   $z$ is the **general solution** of the linear equation($Az=\mathbf{0}$, i.e. $z\in Null(A)$)  
+   We want to find the least norm solution, which means the $\mathbf{z}$ is clost to $\mathbf{0}$ 
+2. There are no solution of $A\mathbf{x}=\mathbf{b}$   
+   So there also be infinitely many best approximate solutions to $A\mathbf{x} = \mathbf{b}^′$
 
 ---
 ## PART2: property  
@@ -435,6 +591,26 @@ It can be proved by induction on $n$ that the characteristic polynomial of $A$ i
 
 ### 15. The algebraic multiplicity of an eigenvalue is always greater than or equal to its geometric multiplicity.
 
+### 16. Property of norm:
+   1. $u · u = ||u||^2$
+   2. $u · u ≥ 0$ , with equality if and only if $u = 0$
+   3. $u · v = v·u$
+   4. $u · (v +w) = u·v+u·w$
+   5. $(cu) · v = u·(cv)=c(u·v)$
+   6. $||cu|| = c||u||$
+
+### 17. property of orthogonal set
+   1. Let $S$ be a subset of $\mathbb{R}^n$, then $S^\perp$is a subspace of $\mathbb{R}^n$.
+   2. Let $S$ be a finite subset of $\mathbb{R}^n$. Then $S^\perp = (Span\ S)^\perp$
+   3. Let $A$ be a matrix.Then$(Row\ A)^⊥=Null\ A$. (Here we identify the row vectors in $Row\ A as column vectors in the natural way.)  
+
+### 18. property of Orthogonal Decomposition Theorem:
+ 1. $dim\ W+dim\ W^\perp =n$
+ 2. $B \cup B'$is a  basis for $\mathbb{R}^n$, where $B$ is a basis for $W$ and $B'$ is a basis for $W^\perp$.
+   
+### 19. property of Orthogonal Projection:
+$U_W(u)$ is the vector in $W$ that is closest to $u$.![alt text](image-1.png)  
+
 ---
 ## PART3: glossary
 1. Triangular matrix: 三角矩阵
@@ -473,4 +649,29 @@ It can be proved by induction on $n$ that the characteristic polynomial of $A$ i
 23. Dimension:  维度
 24. zero subspace: 零子空间
 25. Coordinate vector: 坐标向量
-26. 
+26. eigenvalue: 特征值
+27. eigenvactor: 特征向量
+28. eigenspace: 特征空间
+29. square matrix: 方阵
+30. character equation: 特征方程
+31. character polynomial: 特征多项式
+32. Algebraic multiplicity: 代数重数
+33. Geometric multiplicity: 几何重数
+34. Diagonalization: 对角化
+35. eigenvector matrix: 特征向量矩阵
+36. diagonal matrix of eigenvalues: 特征值矩阵
+37. Norm: 向量模长
+38. Orthogonal: 正交
+39. Unit vector: 单位向量
+40. normalizing: 标准化 
+41. Orthogonal projection: 正交投影
+42. Pythagoras’ Theorem: 毕达哥拉斯定理
+43. Cauchy-Schwarz inequality: 柯西-施瓦兹不等式
+44. Triangle inequality: 三角不等式
+45. Orthogonal set: 正交集
+46. Orthonormal set:标准正交集
+47. Orthogonal basis: 正交基
+48. Gram Schmidt process: 格兰姆-施密特正交化法
+49. Orthogonal Complement:正交补集
+50. Orthogonal Decomposition Theorem: 正交分解定理
+# OJBK
