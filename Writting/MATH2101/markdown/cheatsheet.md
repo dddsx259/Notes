@@ -192,7 +192,7 @@ Subspace of $\mathbb{R}^n$
 
 ### 26. Basis:
 
-Let $V$ be a subspace of $\mathbb{R}^n$. A linearly independent generating set for $V$ is called a basis for $V$.
+Let $V$ be a subspace of $\mathbb{R}^n$. A linearly independent **generating set** for $V$ is called a basis for $V$.
 Remarks:
 - The plural for basis is ***bases***. (单词basis的复数形式是bases)
 - A basis for V must be a subset of V.
@@ -261,10 +261,10 @@ Thus, A matrix $A$ is diagonalizable if and only if for each of its eigenvalues,
 #### Process
 If $A$ is a diagonalizable $n\times n$ matrix, it has $n$ **eigenvalues**:$\{\lambda_1, \lambda_2, ... \lambda_n\}$ and $n$ **corresponding linear independent eigenvectors**:$\{v_1, v_2, ... v_n\}$
 $$
-(i.e. \forall i\in\mathbb{R}\ Av_i=\lambda_i v_i)
+(i.e. \forall i\in \{1,2,... n\}\ Av_i=\lambda_i v_i)
 $$
 Then we have:
-$$A=PDP^-1$$
+$$A=PDP^{-1}$$
 where $P$ is **eigenvector matrix** and $D$ is **diagonal matrix of eigenvalues**
 $$P=
 \begin{bmatrix}
@@ -378,7 +378,12 @@ $$S^\perp = \{v\in \mathbb{R}^n:\forall u\in S,\ v\cdot u=0\}$$
 Let $W$ be a subspace of $\mathbb{R}^n$.  
 Then every vector $u$ in $\mathbb{R}^n$ can be written in the form $u = w+z$ where $w ∈ W$ and $z∈W^⊥$ in a unique way.
 
-### 47. Least Squares Fitting(not in final, just for reading):
+### 47. **row equivalent**
+Two matrices are **row equivalent** if one can be changed to the other by a sequence of elementary row operations. 
+Alternatively, two $m \times n$ matrices are **row equivalent** if and only if they have the **same** row space
+
+
+### Least Squares Fitting(not in final, just for reading):
 There are $n$ points $(x_1,y_1),(x_2,y_2),...,(x_n,y_n)$ on the plane.We use square deviation $E$ to describe the fitting level of the straight line $y=a_0+a_1x$:  
 $$\begin{align*}
     E&=\sum^n_{i=1}[y_i-(a_0+a_1x_i)]^2\\
@@ -674,4 +679,5 @@ $U_W(u)$ is the vector in $W$ that is closest to $u$.![alt text](image-1.png)
 48. Gram Schmidt process: 格兰姆-施密特正交化法
 49. Orthogonal Complement:正交补集
 50. Orthogonal Decomposition Theorem: 正交分解定理
+51. proper subset: 真子集
 # OJBK
